@@ -1,0 +1,214 @@
+/* Configurações Gerais e Cores Litúrgicas */
+:root {
+    --bg-color: #f4f6f8;
+    --card-bg: #ffffff;
+    --primary-color: #2c3e50; /* Azul escuro litúrgico/sóbrio */
+    --text-main: #333333;
+    --text-muted: #666666;
+    --yt-color: #c0392b; /* Vermelho YouTube */
+    --cf-color: #27ae60; /* Verde Cifra */
+    --border-radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+    padding-bottom: 40px;
+}
+
+/* Cabeçalho */
+.main-header {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: left; /* Alinha o texto à esquerda para dar espaço para a imagem à direita */
+    padding: 30px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    
+    /* Configurações da imagem de São Pedro à direita */
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy4_HHk4bgK63VDqArrBssoqaZ98nvV66jgxetkzYysw&s=10');
+    background-repeat: no-repeat;
+    background-position: right 20px center; /* Posiciona a 20px da borda direita e centralizado na altura */
+    background-size: 70px auto; /* Define o tamanho pequeno para a imagem */
+
+    /* Garante que o texto não fique colado ou passe por baixo da imagem no celular */
+    padding-right: 90px; 
+}
+
+
+.main-header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.main-header .subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-top: 4px;
+}
+
+.main-header .description {
+    font-size: 0.85rem;
+    opacity: 0.75;
+    margin-top: 8px;
+}
+
+/* Container Principal */
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Barra de Busca */
+.search-section {
+    margin-bottom: 20px;
+}
+
+.search-group {
+    display: flex;
+    gap: 8px;
+}
+
+.search-group input {
+    flex: 1;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    outline: none;
+}
+
+.search-group input:focus {
+    border-color: var(--primary-color);
+}
+
+.search-group button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+/* Seção de Filtros */
+.filters-section {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filter-block label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap; /* Faz quebrar linha no celular */
+}
+
+.filter-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    background-color: #eef2f5;
+    color: var(--text-main);
+    border: 1px solid #dfe4e8;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Cards de Resultados */
+.card-musica {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+    padding: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-musica h3 {
+    font-size: 1.15rem;
+    color: #1a252f;
+    margin-bottom: 6px;
+}
+
+.badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.badge.parte { background: #e8f4fd; color: #2980b9; }
+.badge.tempo { background: #fef5e7; color: #d35400; }
+.badge.ano { background: #f4ecf7; color: #8e44ad; }
+
+/* Botões de Ação */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+}
+
+.btn-action {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: opacity 0.2s;
+}
+
+.btn-action:hover {
+    opacity: 0.85;
+}
+
+.btn-action.youtube { background-color: var(--yt-color); color: white; }
+.btn-action.cifra { background-color: var(--cf-color); color: white; }
+
+.status-msg {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+.status-msg.error { color: var(--yt-color); }

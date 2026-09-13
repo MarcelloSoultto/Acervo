@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Acervo São Pedro</title>
+    <!-- Vinculando o arquivo de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Acervo São Pedro</h1>
+        <p class="subtitle">Beira Mar - Duque de Caxias</p>
+        <p class="description">Pesquise músicas para missas, celebrações litúrgicas e afins.</p>
+    </header>
+
+    <main class="container">
+        <!-- Barra de busca principal -->
+        <section class="search-section">
+            <form id="searchForm">
+                <div class="search-group">
+                    <input type="text" id="search" placeholder="Digite o nome da música..." aria-label="Buscar música">
+                    <button type="submit">Buscar</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Filtros Rápidos Dinâmicos -->
+        <section class="filters-section">
+            <div class="filter-block">
+                <label>Tempo Litúrgico:</label>
+                <div class="filter-buttons" id="tempoFilters">
+                    <button class="filter-btn active" data-filter="tempo" data-value="todos">Todos</button>
+                    <button class="filter-btn" data-filter="tempo" data-value="comum">Comum</button>
+                    <button class="filter-btn" data-filter="tempo" data-value="quaresma">Quaresma</button>
+                    <button class="filter-btn" data-filter="tempo" data-value="advento">Advento</button>
+                    <button class="filter-btn" data-filter="tempo" data-value="pascoa">Páscoa</button>
+                    <button class="filter-btn" data-filter="tempo" data-value="natal">Natal</button>
+                </div>
+            </div>
+
+            <div class="filter-block">
+                <label>Momento da Missa:</label>
+                <div class="filter-buttons" id="parteFilters">
+                    <button class="filter-btn active" data-filter="parte" data-value="todos">Todos</button>
+                    <button class="filter-btn" data-filter="parte" data-value="entrada">Entrada</button>
+                    <button class="filter-btn" data-filter="parte" data-value="aclamação">Aclamação</button>
+                    <button class="filter-btn" data-filter="parte" data-value="ofertório">Ofertório</button>
+                    <button class="filter-btn" data-filter="parte" data-value="santo">Santo</button>
+                    <button class="filter-btn" data-filter="parte" data-value="cordeiro">Cordeiro</button>
+                    <button class="filter-btn" data-filter="parte" data-value="comunhão">Comunhão</button>
+                    <button class="filter-btn" data-filter="parte" data-value="final">Final</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Container onde os resultados aparecerão -->
+        <section id="results" class="results-container"></section>
+    </main>
+
+    <!-- Chamando o arquivo de lógica separado -->
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
